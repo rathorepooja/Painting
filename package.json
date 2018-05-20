@@ -1,0 +1,41 @@
+{
+  "name": "painting",
+  "version": "1.0.0",
+  "description": "a painting website",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot",
+    "build": "webpack -d"
+  },
+  "author": "pooja rathore",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "lodash": "^4.17.10",
+    "node-sass": "^4.9.0",
+    "node-sass-glob-importer": "^5.1.3",
+    "react": "^16.3.2",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.3.2",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "import-glob-loader": "^1.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-manifest-plugin": "^2.0.2"
+  }
+}

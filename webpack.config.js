@@ -6,14 +6,26 @@ const globImporter = require('node-sass-glob-importer');
 //const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var config = {
-    entry: ['./app/main.js',
-        './app/main.scss'],
+    entry:{
+        main:['./app/main.js'],
+        componentStyles:['./app/main.scss'],
+        libStyles:['./app/library.scss']
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[hash].js'
     },
     mode: 'development',
     devtool: 'inline-source-map',
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                main: { test: "main", name: "main", enforce: true }
+                //componentStyles: { test: "componentStyles", test: /\.s?css$/, name: "componentStyles", enforce: true },
+                //libStyles:{test:"libStyles",test: /\.s?css$/, name: 'libStyles', enforce: true}
+            }
+        }
+    },
     devServer: {
         inline: true,
         contentBase: './dist',
@@ -50,12 +62,12 @@ var config = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.s?[ac]ss$/,
+                test: /\.(css|scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
                        loader: 'css-loader'
-
+                       
                     }, {
                         loader: 'sass-loader',
                         options: {

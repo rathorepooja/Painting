@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const globImporter = require('node-sass-glob-importer');
-//const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 var config = {
     entry:{
         main:['./app/main.js'],
-        componentStyles:['./app/main.scss'],
-        libStyles:['./app/library.scss']
+        styleComponent:['./app/component.scss'],
+        styleWidget:['./app/widget.scss'],
+        styleLib:['./app/library.scss']
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -17,15 +18,6 @@ var config = {
     },
     mode: 'development',
     devtool: 'inline-source-map',
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                main: { test: "main", name: "main", enforce: true }
-                //componentStyles: { test: "componentStyles", test: /\.s?css$/, name: "componentStyles", enforce: true },
-                //libStyles:{test:"libStyles",test: /\.s?css$/, name: 'libStyles', enforce: true}
-            }
-        }
-    },
     devServer: {
         inline: true,
         contentBase: './dist',
@@ -35,22 +27,24 @@ var config = {
         extensions: ['.js', '.jsx', '.scss', '.css'],
     },
     plugins: [
-        new ManifestPlugin(),
-        //new ExtractTextPlugin({ filename: '[name].css'}),
+        new ManifestPlugin(),       
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "[name].css"
+            filename: "style/[name][hash].css"
         }),
         new CleanWebpackPlugin(['dist']),
+     
         new HtmlWebpackPlugin({
             title: 'Output Management - pooja',
             showErrors: true,
             minify: false,
             hash: true,
+            excludeAssets:[/style.*.js/],
             template: "./app/main.html",
             filename: "index.html"
-        })
+        }),
+        new HtmlWebpackExcludeAssetsPlugin()
     ],
     module: {
 

@@ -14,8 +14,12 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js'
+        publicPath:'dist/',
+        filename: function (i) {
+           return new RegExp("^style").test(i.chunk.id) ? 'ignore/[name].[hash].js' : '[name].[hash].js'
+        }
     },
+    
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
@@ -55,6 +59,7 @@ var config = {
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
+          
             {
                 test: /\.(css|scss|sass)$/,
                 use: [

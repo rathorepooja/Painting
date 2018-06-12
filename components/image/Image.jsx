@@ -1,9 +1,14 @@
 import React from 'react';
 
-class Image extends React.component {
-    render () {
-        <div> this is an image component</div>
-    }
-}
 
-export default Image;
+class Image extends React.Component {
+    render() {
+       return (
+          <div>
+             <h1>My Image component</h1>
+            
+          </div>
+       );
+    }
+ }
+ export default Image;

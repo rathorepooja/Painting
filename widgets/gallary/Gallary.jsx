@@ -1,18 +1,15 @@
 import React from 'react';
-import { Image } from '../../components/image/Image.jsx';
-const json = require('./mock.json'); 
+import Image from './../../components/image/Image.jsx';
+//import json from "./mock.json"; 
+
 class Gallary extends React.Component {
-
     render() {
-        <div className="container">
-            Gallary widget
-             <div class="row">
-                <div class="col-sm">
-                    <image/>
-                </div>               
-            </div>
-        </div>
+       return (
+          <div>
+             <h1>This is my Gallery</h1>
+               <Image/> 
+          </div>    
+       );
     }
-
-}
-export default Gallary;
+ }
+ export default Gallary;

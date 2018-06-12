@@ -14,7 +14,13 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js'       
+        filename: '[name].[hash].js'
+        /*chunkFilename: (arg) => {
+            if (new RegExp('^style').test(arg.chunk.name)) {
+                return 'asdfsdfsdfsdfd[name].[chunkhash].js';
+            }
+            return '[name].[hash].js';
+        } */ 
     },
     
     mode: 'development',

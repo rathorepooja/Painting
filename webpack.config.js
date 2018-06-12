@@ -56,7 +56,10 @@ var config = {
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
-          
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+              },
             {
                 test: /\.(css|scss|sass)$/,
                 use: [

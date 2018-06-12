@@ -14,10 +14,7 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath:'dist/',
-        filename: function (i) {
-           return new RegExp("^style").test(i.chunk.id) ? 'ignore/[name].[hash].js' : '[name].[hash].js'
-        }
+        filename: '[name].[hash].js'       
     },
     
     mode: 'development',

@@ -5,6 +5,8 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const globImporter = require('node-sass-glob-importer');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+const devMode = process.env.NODE_ENV !== 'production'
+
 var config = {
     entry:{
         main:['./app/main.js'],
@@ -22,7 +24,7 @@ var config = {
             return '[name].[hash].js';
         } */ 
     },
-    
+
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
@@ -38,7 +40,8 @@ var config = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "style/[name][hash].css"
+            filename: devMode ? 'style/[name].css' : 'style/[name].[hash].css',
+            chunkFilename: devMode ? 'style/[id].css' : 'style/[id].[hash].css'
         }),
         new CleanWebpackPlugin(['dist']),
      

@@ -29,7 +29,6 @@ var config = {
     devtool: 'inline-source-map',
     devServer: {
         inline: true,
-        contentBase: './dist',
         port: 8080
     },
     resolve: {

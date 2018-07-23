@@ -1,4 +1,12 @@
-.image{
-    color:pink;
 
+.image-static-component {
+    .image-list {
+        padding: 1rem;
+        list-style: none;
+        float: left;
+            img {
+                width: 20rem;
+                height: 20rem;
+            }        
+    }
 }

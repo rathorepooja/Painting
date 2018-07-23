@@ -1,0 +1,83 @@
+{
+    "images": [
+        {
+            "id": 1,
+            "name": "Modern Art Photo",
+            "year": 2015,
+            "creation-date": "15/05/2015",
+            "path": "assets/images/modern.jpg",
+            "status": "sold",
+            "category": "modern",
+            "price": 20,
+            "currency":"",
+            "sellable": true,
+            "author": "Pooja"
+        },
+        {
+            "id":2,
+            "name": "mythological Photo",   
+            "year": 2015,
+            "creation-date": "15/05/2018",
+            "path": "assets/images/mythological.jpg",
+            "status": "sold",
+            "category": "mythological",
+            "price": 20,
+            "currency":"",
+            "sellable": false,
+            "author": "Pooja"
+        },
+        {
+            "id":3,
+            "name": "Nature Photo",
+            "year": 2015,
+            "creation-date": "15/05/2018",
+            "path": "assets/images/nature.jpg",
+            "status": "sold",
+            "category": "senic",
+            "price": 20,
+            "currency":"",
+            "sellable": false,
+            "author": "Pooja"
+        },
+        {
+            "id":4,
+            "name": "Nature Photo",
+            "year": 2015,
+            "creation-date": "15/05/2018",
+            "path": "assets/images/nature.jpg",
+            "status": "sold",
+            "category": "senic",
+            "price": 20,
+            "currency":"",
+            "sellable": false,
+            "author": "Pooja"
+        },
+        {
+            "id":5,
+            "name": "Nature Photo",
+            "label": "Nature Photo",
+            "year": 2015,
+            "creation-date": "15/05/2018",
+            "path": "assets/images/nature.jpg",
+            "status": "sold",
+            "category": "senic",
+            "price": 20,
+            "currency":"",
+            "sellable": false,
+            "author": "Pooja"
+        },
+        {
+            "id":6,
+            "name": "Nature Photo",
+            "year": 2015,
+            "creation-date": "15/05/2018",
+            "path": "assets/images/nature.jpg",
+            "status": "sold",
+            "category": "senic",
+            "price": 20,
+            "currency":"",
+            "sellable": false,
+            "author": "Pooja"
+        }
+    ]
+}

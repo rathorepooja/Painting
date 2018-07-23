@@ -1,23 +1,13 @@
 
-import { ADD_IMAGE } from "../constants/action-types";
+import { ADD_IMAGE, GET_IMAGE } from "../constants/action-types";
 const initialState = {
-  images: [{
-    "name": "first Photod",
-    "year": 2015,
-    "creation-date": "15/05/2015",
-    "status": "sold",
-    "category": "",
-    "price": 20,
-    "currency":"",
-    "sellable": true,
-    "author": "Pooja",
-    "id": 0
-}]
+  images: []
 };
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_IMAGE:
-      console.log(action)
+    case GET_IMAGE:
+      return {...state, images: [...state.images]}
+    case ADD_IMAGE:     
       return { ...state, images: [...state.images, ...action.payload] };
     default:
       return state;

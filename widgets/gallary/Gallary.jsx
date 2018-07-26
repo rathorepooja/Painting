@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 
 import Select from 'react-select';
 const categoryFilter = [
-  {"label": "senic", value: "category:senic"},
-  {"label": "mythologicl", value: "category:mythologicl"},
-  {"label": "modern", value: "category:modern"} 
+  {"label": "senic", value: "category:senic", "type":"category"},
+  {"label": "mythologicl", value: "category:mythologicl", "type":"category"},
+  {"label": "modern", value: "category:modern", "type":"category"} 
 ]
 class Gallary extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Gallary extends React.Component {
   handleChange(selectedOption){
     console.log("selectedOption");
     console.log(selectedOption);
-    this.props.filterImage(selectedOption[0].value)
+    
    // this.props.addImages(selectedOption);
     console.log("change");
   }

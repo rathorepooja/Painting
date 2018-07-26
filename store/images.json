@@ -3,6 +3,8 @@
         {
             "id": 1,
             "name": "Modern Art Photo",
+            "label": "Modern Art Photo",
+            "value": "Modern Art Photo",
             "year": 2015,
             "creation-date": "15/05/2015",
             "path": "assets/images/modern.jpg",
@@ -16,6 +18,8 @@
         {
             "id":2,
             "name": "mythological Photo",   
+            "label": "mythological Photo", 
+            "value" :"mythologicl", 
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/mythological.jpg",
@@ -24,11 +28,14 @@
             "price": 20,
             "currency":"",
             "sellable": false,
-            "author": "Pooja"
+            "author": "Pooja",
+            "isMulti": true
         },
         {
             "id":3,
             "name": "Nature Photo",
+            "value":"sdsd",
+            "label": "Nature 3",
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/nature.jpg",
@@ -42,6 +49,8 @@
         {
             "id":4,
             "name": "Nature Photo",
+            "value":"sdsddfsdf",
+            "label": "Nature 4",
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/nature.jpg",
@@ -55,7 +64,8 @@
         {
             "id":5,
             "name": "Nature Photo",
-            "label": "Nature Photo",
+            "label": "Nature 5",
+            "value":"dfsdfsd",
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/nature.jpg",
@@ -69,6 +79,8 @@
         {
             "id":6,
             "name": "Nature Photo",
+            "label": "Nature Photo",
+            "value": "iujiji",
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/nature.jpg",

@@ -1,23 +1,30 @@
 import React from 'react';
 import Image from './../../components/image/Image.jsx';
-import { addImage } from './../../actions/index.js';
+import { addImage, filterImage } from './../../actions/index.js';
 import { connect } from 'react-redux';
-import  MultiSelectReact  from 'multi-select-react';
+
+import Select from 'react-select';
+const categoryFilter = [
+  {"label": "senic", value: "category:senic"},
+  {"label": "mythologicl", value: "category:mythologicl"},
+  {"label": "modern", value: "category:modern"} 
+]
 class Gallary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loaded: false,
       error: false,
-      title: "This is my Gallery"
+      title: "This is my Gallery"      
     };
   }
-  selectedOptionsClick(optionsList, id) {
-   console.log(optionsList)
-  }
-  optionClicked(optionsList) {
-    console.log(optionsList);
-    this.setState({ images: optionsList });
+  
+  handleChange(selectedOption){
+    console.log("selectedOption");
+    console.log(selectedOption);
+    this.props.filterImage(selectedOption[0].value)
+   // this.props.addImages(selectedOption);
+    console.log("change");
   }
   componentDidMount(){    
      
@@ -50,10 +57,17 @@ class Gallary extends React.Component {
             <div>            
               <h1 className="small-padding">{this.state.title}</h1>
               <div className="header-funtion">
-                <div className="filter">
-                  <MultiSelectReact options={this.props.images}
-                  optionClicked={this.optionClicked.bind(this)}
-                  selectedBadgeClicked={this.selectedOptionsClick.bind(this)}/>
+                <div className="filter">                  
+                  <Select
+                    isMulti
+                    placeholder="Select the days"
+                    onChange={(...args) => this.handleChange(...args)}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+
+                    options={categoryFilter}
+                    
+                  />
                 </div>
                 <div className="sorting-price"></div>
                 <div className="sorting-date"></div>
@@ -77,6 +91,9 @@ const mapDispatchToProps = dispatch  => {
   return {
     addImages: (data) => {
       dispatch(addImage(data));
+    },
+    filterImage: (data) => {
+      dispatch(filterImage(data))
     }
   }
 }

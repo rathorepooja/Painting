@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Navbar } from 'react-bootstrap';
+import {Link } from "react-router-dom";
 
 export const Header  = (props) => {
 
@@ -8,13 +9,15 @@ export const Header  = (props) => {
     <Navbar inverse >
       <Navbar.Header>
         <Navbar.Brand>
-          <a>HOME</a>
+          <Link to={'/'}> HOME</Link>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Text>
-          <Navbar.Link>Buy Some</Navbar.Link>
+          <Navbar.Link>
+           BUY NOW
+            </Navbar.Link>
         </Navbar.Text>
         <Navbar.Text pullRight>Welcome!</Navbar.Text>
       </Navbar.Collapse>

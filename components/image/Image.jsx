@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from "react-router-dom";
 
 
 class Image extends React.Component {
@@ -7,11 +8,13 @@ class Image extends React.Component {
     }
     createImage() {
         return this.props.images.map((image) => {
-            return <li className="image-list" key={image.id}>
+            return <li className="image-list" id={image.id} key={image.id}>
                 <div>
+                <Link to={`/details/${image.id}`} >
                     <h3>{image.name}</h3>
-                    <img src={image.path} />
-                </div>
+                    <img src={image.path} />                
+               </Link>
+               </div>
             </li>
         })
     }

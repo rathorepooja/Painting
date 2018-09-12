@@ -16,6 +16,7 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         filename: '[name].[hash].js'
         /*chunkFilename: (arg) => {
             if (new RegExp('^style').test(arg.chunk.name)) {
@@ -29,7 +30,8 @@ var config = {
     devtool: 'inline-source-map',
     devServer: {
         inline: true,
-        port: 8080
+        port: 8080,
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.jsx', '.scss', '.css'],

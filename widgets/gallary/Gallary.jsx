@@ -1,13 +1,15 @@
 import React from 'react';
 import Image from './../../components/image/Image.jsx';
-import { addImage, filterImage } from './../../actions/index.js';
+import { addImage, filterImage, resetImage, emptyImages } from './../../actions/index.js';
 import { connect } from 'react-redux';
 
 import Select from 'react-select';
 const categoryFilter = [
-  {"label": "senic", value: "category:senic", "type":"category"},
-  {"label": "mythologicl", value: "category:mythologicl", "type":"category"},
-  {"label": "modern", value: "category:modern", "type":"category"} 
+  {"label": "senic", value: "senic", "type":"category"},
+  {"label": "mythological", value: "mythological", "type":"category"},
+  {"label": "modern", value: "modern", "type":"category"},
+  {"label": "artist: pooja", value: "Pooja", "type":"author"},
+  {"label": "artist: abc", value: "abc", "type":"author"},
 ]
 class Gallary extends React.Component {
   constructor(props) {
@@ -20,14 +22,14 @@ class Gallary extends React.Component {
   }
   
   handleChange(selectedOption){
-    console.log("selectedOption");
-    console.log(selectedOption);
-    
-   // this.props.addImages(selectedOption);
-    console.log("change");
+    if (selectedOption.length > 0) {
+      this.props.filterImage(selectedOption.map((a) => a.value));
+    } else {
+      this.props.resetImages();
+    }
   }
   componentDidMount(){    
-     
+      this.props.emptyImages();
         fetch('../store/images.json')
           .then(res => res.json())
           .then(
@@ -54,7 +56,7 @@ class Gallary extends React.Component {
         return <div> Loading </div>
       } else {
         return (
-            <div>            
+            <div className="container">            
               <h1 className="small-padding">{this.state.title}</h1>
               <div className="header-funtion">
                 <div className="filter">                  
@@ -89,6 +91,12 @@ class Gallary extends React.Component {
 }
 const mapDispatchToProps = dispatch  => {
   return {
+    emptyImages: () => {
+      dispatch(emptyImages())
+    },
+    resetImages: () => {
+      dispatch(resetImage());
+    },
     addImages: (data) => {
       dispatch(addImage(data));
     },

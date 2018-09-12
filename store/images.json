@@ -19,7 +19,7 @@
             "id":2,
             "name": "mythological Photo",   
             "label": "mythological Photo", 
-            "value" :"mythologicl", 
+            "value" :"mythological", 
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/mythological.jpg",
@@ -88,7 +88,7 @@
             "category": "senic",
             "price": 20,
             "currency":"",
-            "sellable": false,
+            "sellable": true,
             "author": "Pooja"
         }
     ]

@@ -16,10 +16,12 @@ export const Header  = (props) => {
       <Navbar.Collapse>
         <Navbar.Text>
           <Navbar.Link>
-           BUY NOW
+          WELCOME
             </Navbar.Link>
         </Navbar.Text>
-        <Navbar.Text pullRight>Welcome!</Navbar.Text>
+        <Navbar.Text pullRight>
+          <Button href="/cart">Link</Button>
+        </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>
     </header>

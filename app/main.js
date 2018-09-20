@@ -12,7 +12,7 @@ import Details from './../widgets/details/Details.jsx';
 
 //const element = <h1>Hello, world</h1>;
 //ReactDOM.render(element, document.getElementById('app'));
-window.store = store;
+//window.store = store;
 //window.addImage = addImage;
 ReactDOM.render(<Provider store={store}>
 
@@ -22,7 +22,8 @@ ReactDOM.render(<Provider store={store}>
       <Header />
       <Switch>
         <Route exact path="/" component={Gallary} />
-        <Route exact path="/details/:id" component={Details} />
+        <Route path="/details/:id" component={Details} />
+      
       </Switch>
     </div>
   </Router>

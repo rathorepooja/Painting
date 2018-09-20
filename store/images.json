@@ -84,12 +84,13 @@
             "year": 2015,
             "creation-date": "15/05/2018",
             "path": "assets/images/nature.jpg",
-            "status": "sold",
+            "status": "ready",
             "category": "senic",
             "price": 20,
             "currency":"",
             "sellable": true,
-            "author": "Pooja"
+            "author": "Pooja",
+            "description": "this image is sdf "
         }
     ]
 }

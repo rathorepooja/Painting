@@ -28,7 +28,14 @@ class Gallary extends React.Component {
       this.props.resetImages();
     }
   }
-  componentDidMount(){    
+  componentDidMount(){  
+    if (this.props.allImages && this.props.allImages.length > 0 ) {
+        this.props.resetImages();
+        this.setState({
+          loaded: true
+        });
+        return;
+    }
       this.props.emptyImages();
         fetch('../store/images.json')
           .then(res => res.json())
@@ -86,7 +93,8 @@ class Gallary extends React.Component {
  }
  const mapStateToProps = state => { 
   return {   
-    images: state['images']
+    images: state['images'],
+    allImages: state['allImages']
   }
 }
 const mapDispatchToProps = dispatch  => {

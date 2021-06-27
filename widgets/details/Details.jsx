@@ -1,7 +1,6 @@
 // adding a commit to verify the revert functionality
 // adding fourth commit
 // adding fifth commit
-// adding sixth commit
 import React from 'react';
 
 import { connect } from 'react-redux';

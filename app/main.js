@@ -1,5 +1,4 @@
 // adding a commit to verify the revert functionality
-// adding secon commit
 //import "./../assets/styles/libs.scss";
 
 import React from 'react';

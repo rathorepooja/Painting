@@ -1,4 +1,3 @@
-//adding secon commit
 import React from 'react';
 import Image from './../../components/image/Image.jsx';
 import { addImage, filterImage, resetImage, emptyImages } from './../../actions/index.js';

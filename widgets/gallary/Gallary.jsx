@@ -1,5 +1,4 @@
-// adding fourth commits
-// adding fifth commit
+// adding fourth commit
 import React from 'react';
 import Image from './../../components/image/Image.jsx';
 import { addImage, filterImage, resetImage, emptyImages } from './../../actions/index.js';
